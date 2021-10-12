@@ -6,7 +6,7 @@ import AddProject from '../components/AddProject';
 export default function ProjectListPage() {
 
 	// we don't need this bc we are using the proxy in package.json
-	const API_URL = 'http://localhost:5005';
+	//const API_URL = 'http://localhost:5005';
 
 	const [projects, setProjects] = useState([]);
 
@@ -25,15 +25,16 @@ export default function ProjectListPage() {
 		getAllProjects();
 		// bc of the empty dependency array we only get all the projects  
 		// on the first render (when the component is mounted)
-	}, [])
+	}, )
 
 	return (
 		<div>
-			<h1>All Projects 📝</h1>
+			<AddProject refreshProjects={getAllProjects} />
+			<h1></h1>
 
 			{projects.map(project => <ProjectCard key={project._id} {...project} />)}
 
-			<AddProject refreshProjects={getAllProjects} />
+			
 		</div>
 
 	)

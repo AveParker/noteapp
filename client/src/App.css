@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+.background {
+  background-color: #61dafb;
+}
+
+.backgroundpicture {
+  background-image: url('./Pictures/depositphotos_60821501-stock-illustration-hands-holding-notebook.jpeg');
+  background-repeat: no-repeat;
+  background-position: 'center';
+  width: 800px;
+  height: 800px
+}
+
+.container {
+  height: 100%;
+  padding: 0;
+  margin-left: 20px;
+  margin-right: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}

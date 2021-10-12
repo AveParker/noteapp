@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { signup } from '../services/auth';
-import axios from 'axios';
 
 export default function Signup(props) {
 

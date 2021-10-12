@@ -3,10 +3,11 @@ import { useState, useEffect } from 'react'
 
 export default function EditProjectPage(props) {
 
-	const API_URL = 'http://localhost:5005';
+	const API_URL = 'http://localhost:3000';
 
 	const [title, setTitle] = useState('');
 	const [description, setDescription] = useState('');
+	const [keywords, setKeywords] = useState('');
 
 	const projectId = props.match.params.id;
 
@@ -16,9 +17,10 @@ export default function EditProjectPage(props) {
 				console.log('use effect');
 				setTitle(response.data.title);
 				setDescription(response.data.description);
+				setKeywords(response.data.keywords)
 			})
 			.catch(err => console.log(err))
-	}, [])
+	}, )
 
 	const deleteProject = () => {
 		axios.delete(`${API_URL}/api/projects/${projectId}`)
@@ -31,7 +33,7 @@ export default function EditProjectPage(props) {
 
 	const handleSubmit = e => {
 		e.preventDefault();
-		const requestBody = { title, description };
+		const requestBody = { title, description, keywords };
 		axios.put(`${API_URL}/api/projects/${projectId}`, requestBody)
 			.then(response => {
 				// this is a redirect using react router dom 
@@ -58,10 +60,17 @@ export default function EditProjectPage(props) {
 					value={description}
 					onChange={e => setDescription(e.target.value)}
 				/>
-				<button type="submit">Update this project</button>
+				<label htmlFor="keywords">Keywords: </label>
+				<input
+					type="text"
+					name="keywords"
+					value={keywords}
+					onChange={e => setKeywords(e.target.value)}
+				/>
+				<button type="submit">Update this note</button>
 			</form>
 
-			<button onClick={deleteProject}>Delete this project 🗑</button>
+			<button onClick={deleteProject}>Delete this note 🗑</button>
 
 		</div>
 	)

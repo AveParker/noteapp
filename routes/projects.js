@@ -19,11 +19,12 @@ router.get('/', (req, res, next) => {
 
 // create a project
 router.post('/', (req, res, next) => {
-	const { title, description } = req.body;
+	const { title, description, keywords,} = req.body;
 	const owner = req.session.user._id;
 	Project.create({
 		title,
 		description,
+		keywords,
 		owner
 	})
 		.then(project => {
@@ -55,8 +56,8 @@ router.get('/:id', (req, res, next) => {
 });
 
 router.put('/:id', (req, res, next) => {
-	const { title, description } = req.body;
-	Project.findByIdAndUpdate(req.params.id, { title: title, description: description }, { new: true })
+	const { title, description, keywords, } = req.body;
+	Project.findByIdAndUpdate(req.params.id, { title: title, description: description, keywords: keywords }, { new: true })
 		.then(updatedProject => {
 			res.status(200).json(updatedProject);
 		})

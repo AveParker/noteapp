@@ -2,7 +2,7 @@ import './App.css';
 import HomePage from './pages/HomePage';
 import Navbar from './components/Navbar';
 import { useState } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import ProjectListPage from './pages/ProjectListPage';
 import ProjectDetailsPage from './pages/ProjectDetailsPage';
 import EditProjectPage from './pages/EditProjectPage';

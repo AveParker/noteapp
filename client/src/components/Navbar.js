@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { logout } from '../services/auth';
+import App from '../App.css'
 
 export default function Navbar(props) {
 
@@ -15,10 +16,10 @@ export default function Navbar(props) {
 			{props.user ? (
 				<>
 					<Link to="/">
-						<button>Home</button>
+						<button className="container">Home</button>
 					</Link>
 					<Link to="/projects">
-						<button>Projects</button>
+						<button>My Notes</button>
 					</Link>
 					<Link to="/" onClick={() => handleLogout()}>
 						<button>Logout</button>

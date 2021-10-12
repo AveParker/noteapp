@@ -5,7 +5,7 @@ import axios from 'axios';
 
 export default function ProjectDetailsPage(props) {
 
-	const API_URL = 'http://localhost:5005';
+	const API_URL = 'http://localhost:3000';
 
 	const [project, setProject] = useState(null);
 
@@ -22,7 +22,7 @@ export default function ProjectDetailsPage(props) {
 
 	useEffect(() => {
 		getProject();
-	}, [])
+	}, )
 
 	return (
 		<div>
@@ -30,6 +30,7 @@ export default function ProjectDetailsPage(props) {
 				<>
 					<h1>{project.title}</h1>
 					<p>{project.description}</p>
+					<p>{project.keywords}</p>
 					<Link to={`/projects/edit/${project._id}`}>
 						<button>Edit this project</button>
 					</Link>
