@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProjectCard from '../components/ProjectCard';
 import AddProject from '../components/AddProject';
+import App from '../App.css'
 
 export default function ProjectListPage() {
 
@@ -28,7 +29,7 @@ export default function ProjectListPage() {
 	}, )
 
 	return (
-		<div>
+		<div className="list">
 			<AddProject refreshProjects={getAllProjects} />
 			<h1></h1>
 

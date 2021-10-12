@@ -54,7 +54,7 @@ export default function AddProject(props) {
 					onChange={e => setKeywords(e.target.value)}
 				/>
 			
-				<button type="submit">Add this note ＋</button>
+				<button className="button" type="submit">+ ADD</button>
 				
 			</form>
 		</div>

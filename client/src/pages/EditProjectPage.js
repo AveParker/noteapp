@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react'
+import App from '../App.css'
 
 export default function EditProjectPage(props) {
 
@@ -20,7 +21,7 @@ export default function EditProjectPage(props) {
 				setKeywords(response.data.keywords)
 			})
 			.catch(err => console.log(err))
-	}, )
+	}, [])
 
 	const deleteProject = () => {
 		axios.delete(`${API_URL}/api/projects/${projectId}`)
@@ -44,7 +45,7 @@ export default function EditProjectPage(props) {
 
 	return (
 		<div>
-			<h3>Edit this project</h3>
+			<h3>Edit your note, after saving the list will be updated!</h3>
 			<form onSubmit={handleSubmit}>
 				<label htmlFor="title">Title: </label>
 				<input
@@ -67,10 +68,11 @@ export default function EditProjectPage(props) {
 					value={keywords}
 					onChange={e => setKeywords(e.target.value)}
 				/>
-				<button type="submit">Update this note</button>
+				<button type="submit" className="button">+ SAVE</button>
+				
+				<button onClick={deleteProject} className="button" >- DELETE</button>
 			</form>
-
-			<button onClick={deleteProject}>Delete this note 🗑</button>
+	
 
 		</div>
 	)

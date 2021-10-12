@@ -45,6 +45,7 @@
   background-image: url('./Pictures/depositphotos_60821501-stock-illustration-hands-holding-notebook.jpeg');
   background-repeat: no-repeat;
   background-position: 'center';
+  margin-left:200px;
   width: 800px;
   height: 800px
 }
@@ -59,4 +60,18 @@
   justify-content: center;
   flex-direction: column;
 
+}
+
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: 20px;
+  color: white;
+  margin-left: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  box-shadow: lightslategrey;
+  text-shadow: magenta ;
 }

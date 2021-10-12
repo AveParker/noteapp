@@ -22,7 +22,7 @@ export default function ProjectDetailsPage(props) {
 
 	useEffect(() => {
 		getProject();
-	}, )
+	}, [])
 
 	return (
 		<div>
@@ -32,7 +32,7 @@ export default function ProjectDetailsPage(props) {
 					<p>{project.description}</p>
 					<p>{project.keywords}</p>
 					<Link to={`/projects/edit/${project._id}`}>
-						<button>Edit this project</button>
+						<button className="button">EDIT</button>
 					</Link>
 				</>
 			)}
